@@ -145,8 +145,6 @@ public class HotelDaoImpl implements HotelDao, CloseDaoResource, StatementGenera
             connection.commit();
             connection.setAutoCommit(true);
         } catch (SQLException e) {
-            System.out.println("in find hotels dao");
-            e.printStackTrace();
             logger.log(Level.ERROR, e);
             rollBack(connection); 
             throw new DaoException(e);
@@ -265,7 +263,6 @@ public class HotelDaoImpl implements HotelDao, CloseDaoResource, StatementGenera
                 number--;
             }
         } catch (SQLException e) {
-            e.printStackTrace();
             logger.log(Level.ERROR, e);
             throw new DaoException();
         }
